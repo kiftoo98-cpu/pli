@@ -21,6 +21,15 @@ public class MovementController : MonoBehaviour
     void Update()
     {
         _rb.velocity = new Vector2(_inputReceiver.MoveX * _speed, _rb.velocity.y);
+        if (_inputReceiver.MoveX > 0)
+        {
+            gameObject.transform.localScale = new Vector3(1, 1 ,1);
+        }
+        else if(_inputReceiver.MoveX < 0)
+        {
+            gameObject.transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else return;
 
         if (_inputReceiver.JumpPressed)
         {

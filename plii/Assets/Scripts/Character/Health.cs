@@ -1,31 +1,36 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Health : MonoBehaviour, IDamagable
+public class Health : MonoBehaviour
 {
     [SerializeField] private int _maxHealth = 5;
 
-    public int Current {  get; private set; }
+    [SerializeField] private int _currentHealth;
 
-    public UnityEvent OnDeath;
-    public UnityEvent<int> OnDamaged;
+    public Action OnDeath;
+    public Action<int, int> OnDamaged;
 
     private void Awake()
     {
-        Current = _maxHealth;
+        _currentHealth = _maxHealth;
     }
 
-    public void TakeDamage(int amount, Vector2 hitPoint, Vector2 hitNormal)
+    public void ChangeHealth(int value)
     {
-        if(Current <= 0) return;
-        Current -= Mathf.Max(1, amount);
-        OnDamaged?.Invoke(Current);
-        if(Current<= 0)
+        _currentHealth += value;
+
+        if (_currentHealth > _maxHealth)
+        {
+            _currentHealth = _maxHealth;
+        }
+        if (_currentHealth <= 0)
         {
             OnDeath?.Invoke();
         }
+        OnDamaged?.Invoke(_currentHealth,_maxHealth);
     }
 
     
