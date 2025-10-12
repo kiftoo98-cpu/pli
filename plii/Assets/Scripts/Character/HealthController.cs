@@ -9,15 +9,24 @@ public class HealthController : MonoBehaviour
     
     void Start()
     {
-        _health = GetComponent<Health>();
-        _healthView = GetComponent<HealthView>();
-        _health.OnDamaged += HealthHandler;
+        _health.OnDamaged += OnHealthChanged;
+        _health.OnDeath += PlayerDestroy;
     }
 
-    private void HealthHandler(int newHealth, int maxhelth)
+    private void PlayerDestroy()
+    {
+        Destroy(gameObject);
+    }
+
+    private void OnHealthChanged(int newHealth, int maxhelth)
     {
         _healthView.ChangeBar(newHealth,maxhelth);
     }
-    
-    
+    private void OnDestroy()
+    {
+        _health.OnDamaged -= OnHealthChanged;
+        _health.OnDeath -= PlayerDestroy;
+    }
+
+
 }
