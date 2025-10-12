@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HealthView : MonoBehaviour
 {
     [SerializeField] private Image _bar;
-    
+
     public void ChangeBar(float value, float maxhealth)
     {
         float val = value/maxhealth;

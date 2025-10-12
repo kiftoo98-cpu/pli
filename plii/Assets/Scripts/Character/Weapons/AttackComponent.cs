@@ -12,8 +12,8 @@ public class AttackComponent : MonoBehaviour
 
     private void Awake()
     {
-        _weapon = GetComponent<IWeapon>() ?? GetComponentInChildren<IWeapon>();
-        _input = GetComponent<KeyboardInputReceiver>();
+        _weapon = GetComponent<IWeapon>() ?? GetComponentInParent<IWeapon>();
+        _input = GetComponentInParent<KeyboardInputReceiver>();
     }
 
     

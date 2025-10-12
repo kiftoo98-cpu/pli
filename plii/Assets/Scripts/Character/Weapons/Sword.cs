@@ -8,8 +8,14 @@ public class Sword : MonoBehaviour, IWeapon
     [SerializeField] private float _range = 1.5f;
     [SerializeField] private float _radius = 0.1f;
     [SerializeField] private LayerMask _hitMask;
+    
     [SerializeField] private Transform _firePoint;
     [SerializeField] private Transform _character;
+
+    public void Broke()
+    {
+        
+    }
 
     public void Use()
     {
@@ -24,8 +30,10 @@ public class Sword : MonoBehaviour, IWeapon
         }
     }
 
-    public void Broke()
-    {
+    
 
-    }
+    
+    
+ 
+    
 }
