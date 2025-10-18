@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 160526251}
   m_Layer: 0
   m_Name: floating-rock-1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -349,7 +349,7 @@ GameObject:
   - component: {fileID: 204599615}
   m_Layer: 0
   m_Name: big-floating-rock
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1766,7 +1766,7 @@ GameObject:
   - component: {fileID: 585699645}
   m_Layer: 0
   m_Name: floating-rock-2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1944,7 +1944,7 @@ MonoBehaviour:
   _hitMask:
     serializedVersion: 2
     m_Bits: 64
-  _firepoint: {fileID: 693438637}
+  _firePoint: {fileID: 0}
   _character: {fileID: 615137340}
 --- !u!114 &615137342
 MonoBehaviour:
@@ -5212,7 +5212,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1242622624}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f805f739eba7a1449874e72ab3660ce, type: 3}
   m_Name: 
@@ -5864,7 +5864,7 @@ GameObject:
   - component: {fileID: 1490994864}
   m_Layer: 0
   m_Name: small-floating-rock
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

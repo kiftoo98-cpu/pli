@@ -20,22 +20,18 @@ public class EnemyHealth : MonoBehaviour, IDamagable
 
     private void Update()
     {
-       if( _enemyCurrentHealth < _enemyMaxHealth)
-       {
-            StartCoroutine(EnemyHealing());
-            //OnHealthChange?.Invoke(_enemyCurrentHealth, _enemyMaxHealth);
-       } 
+        //StartCoroutine(EnemyHealing());
 
-       if ( _enemyCurrentHealth > _enemyMaxHealth)
-       {
+        if (_enemyCurrentHealth > _enemyMaxHealth)
+        {
             _enemyCurrentHealth = _enemyMaxHealth;
-            OnHealthChange?.Invoke(_enemyCurrentHealth, _enemyMaxHealth);
+            //OnHealthChange?.Invoke(_enemyCurrentHealth, _enemyMaxHealth);
         }
 
-       if ( _enemyCurrentHealth <= 0)
-       {
+        if (_enemyCurrentHealth <= 0)
+        {
             OnDeath?.Invoke();
-       }
+        }
     }
 
     public void TakeDamage(int amount, Vector2 hitPoint, Vector2 hitNormal)
@@ -44,15 +40,15 @@ public class EnemyHealth : MonoBehaviour, IDamagable
         OnHealthChange?.Invoke(_enemyCurrentHealth, _enemyMaxHealth);
     }
 
-    private IEnumerator EnemyHealing()
-    {
-        while(_enemyCurrentHealth < _enemyMaxHealth)
-        {
-            yield return new WaitForSeconds(5f);
-            _enemyCurrentHealth += 1;
-            OnHealthChange?.Invoke(_enemyCurrentHealth, _enemyMaxHealth);
-        }
-        
-    }
-   
+    //private IEnumerator EnemyHealing()
+    //{
+    //    while (_enemyCurrentHealth < _enemyMaxHealth)
+    //    {
+    //        yield return new WaitForSeconds(5f);
+    //        _enemyCurrentHealth += 1;
+    //        OnHealthChange?.Invoke(_enemyCurrentHealth, _enemyMaxHealth);
+    //    }
+
+    //}
+
 }
